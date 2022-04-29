@@ -16,7 +16,7 @@ const MoviesBody:NextPage = ():JSX.Element => {
     }
     // deconstruct context
     const {moviesSeries,selectedMovies}= useContext(MovieContext);
-    const [movie,popularMovies,topMovies,comingMovies,actionMovies,popularSeries,topSeries,comingSeries] = moviesSeries;
+    const [movie,popularMovies,topMovies,comingMovies,actionMovies,popularSeries,topSeries] = moviesSeries;
     const [isSelected] = selectedMovies;
     // use ref for the sliders
     const carousel1 = useRef() as refElement;
@@ -63,7 +63,7 @@ const MoviesBody:NextPage = ():JSX.Element => {
         },2000)
         
     },[]);
-    if(popularMovies.isLoading || movie.isLoading || topMovies.isLoading || comingMovies.isLoading   || popularSeries.isLoading || topSeries.isLoading || comingSeries.isLoading ){
+    if(popularMovies.isLoading || movie.isLoading || topMovies.isLoading || comingMovies.isLoading   || popularSeries.isLoading || topSeries.isLoading){
         return <div><MovieLoading/></div>
     }
    
